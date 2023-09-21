@@ -1,13 +1,13 @@
 Summary:	OpenXR loader and validation layers implementation
 Summary(pl.UTF-8):	Implementacja loadera i warstw kontroli poprawności standardu OpenXR
 Name:		OpenXR
-Version:	1.0.27
+Version:	1.0.30
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/KhronosGroup/OpenXR-SDK-Source/releases
 Source0:	https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-%{version}/%{name}-SDK-Source-release-%{version}.tar.gz
-# Source0-md5:	f261d81ff299cdf301619dc0bcd9ebb0
+# Source0-md5:	44659aefa1c3a3ec387c1899600aee97
 Patch0:		%{name}-jsoncpp.patch
 URL:		https://www.khronos.org/openxr/
 BuildRequires:	EGL-devel
@@ -83,6 +83,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGELOG.SDK.md COPYING.adoc README.md
 %attr(755,root,root) %{_bindir}/hello_xr
 %attr(755,root,root) %{_bindir}/openxr_runtime_list
+%attr(755,root,root) %{_bindir}/openxr_runtime_list_json
 %attr(755,root,root) %{_libdir}/libXrApiLayer_api_dump.so
 %attr(755,root,root) %{_libdir}/libXrApiLayer_core_validation.so
 %attr(755,root,root) %{_libdir}/libopenxr_loader.so.*.*.*
@@ -90,6 +91,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/openxr
 %{_mandir}/man1/hello_xr.1*
 %{_mandir}/man1/openxr_runtime_list.1*
+%{_mandir}/man1/openxr_runtime_list_json.1*
 
 %files devel
 %defattr(644,root,root,755)
