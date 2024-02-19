@@ -1,13 +1,13 @@
 Summary:	OpenXR loader and validation layers implementation
 Summary(pl.UTF-8):	Implementacja loadera i warstw kontroli poprawności standardu OpenXR
 Name:		OpenXR
-Version:	1.0.33
+Version:	1.0.34
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/KhronosGroup/OpenXR-SDK-Source/releases
 Source0:	https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-%{version}/%{name}-SDK-Source-release-%{version}.tar.gz
-# Source0-md5:	21a186aad8f94c2da6bdb601cca5dc1d
+# Source0-md5:	545499cdf979fc83526ccd2fb82dd5ac
 Patch0:		%{name}-jsoncpp.patch
 URL:		https://www.khronos.org/openxr/
 BuildRequires:	EGL-devel
