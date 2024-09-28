@@ -1,13 +1,13 @@
 Summary:	OpenXR loader and validation layers implementation
 Summary(pl.UTF-8):	Implementacja loadera i warstw kontroli poprawności standardu OpenXR
 Name:		OpenXR
-Version:	1.0.34
+Version:	1.1.41
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/KhronosGroup/OpenXR-SDK-Source/releases
 Source0:	https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-%{version}/%{name}-SDK-Source-release-%{version}.tar.gz
-# Source0-md5:	545499cdf979fc83526ccd2fb82dd5ac
+# Source0-md5:	eb48db3bef23cad3d650f76b7a45a3d1
 Patch0:		%{name}-jsoncpp.patch
 URL:		https://www.khronos.org/openxr/
 BuildRequires:	EGL-devel
@@ -16,7 +16,7 @@ BuildRequires:	OpenGLESv2-devel
 BuildRequires:	OpenGLESv3-devel
 BuildRequires:	Vulkan-Headers
 BuildRequires:	Vulkan-Loader-devel
-BuildRequires:	cmake >= 3.0
+BuildRequires:	cmake >= 3.16
 BuildRequires:	glslang
 BuildRequires:	jsoncpp-devel
 BuildRequires:	python3 >= 1:3.6
@@ -57,14 +57,12 @@ Pliki nagłówkowe biblioteki OpenXR.
 %patch0 -p1
 
 %build
-install -d build
-cd build
-%cmake .. \
+%cmake -B build \
 	-DBUILD_ALL_EXTENSIONS=ON \
 	-DBUILD_WITH_SYSTEM_JSONCPP=ON \
 	-DCMAKE_INSTALL_LIBDIR=%{_lib}
 
-%{__make}
+%{__make} -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
