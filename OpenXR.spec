@@ -54,7 +54,7 @@ Pliki nagłówkowe biblioteki OpenXR.
 
 %prep
 %setup -q -n %{name}-SDK-Source-release-%{version}
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %cmake -B build \
