@@ -1,13 +1,13 @@
 Summary:	OpenXR loader and validation layers implementation
 Summary(pl.UTF-8):	Implementacja loadera i warstw kontroli poprawności standardu OpenXR
 Name:		OpenXR
-Version:	1.1.54
+Version:	1.1.57
 Release:	1
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/KhronosGroup/OpenXR-SDK-Source/releases
 Source0:	https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-%{version}/%{name}-SDK-Source-release-%{version}.tar.gz
-# Source0-md5:	255263d55ed9bed7e74df1165b44d20d
+# Source0-md5:	39766af960508074a0b1d2512c33396b
 Patch0:		%{name}-jsoncpp.patch
 URL:		https://www.khronos.org/openxr/
 BuildRequires:	EGL-devel
@@ -82,10 +82,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/hello_xr
 %attr(755,root,root) %{_bindir}/openxr_runtime_list
 %attr(755,root,root) %{_bindir}/openxr_runtime_list_json
-%attr(755,root,root) %{_libdir}/libXrApiLayer_api_dump.so
-%attr(755,root,root) %{_libdir}/libXrApiLayer_best_practices_validation.so
-%attr(755,root,root) %{_libdir}/libXrApiLayer_core_validation.so
-%attr(755,root,root) %{_libdir}/libopenxr_loader.so.*.*.*
+%{_libdir}/libXrApiLayer_api_dump.so
+%{_libdir}/libXrApiLayer_best_practices_validation.so
+%{_libdir}/libXrApiLayer_core_validation.so
+%{_libdir}/libopenxr_loader.so.*.*.*
 %ghost %{_libdir}/libopenxr_loader.so.1
 %{_datadir}/openxr
 %{_mandir}/man1/hello_xr.1*
