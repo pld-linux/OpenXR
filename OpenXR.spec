@@ -2,7 +2,7 @@ Summary:	OpenXR loader and validation layers implementation
 Summary(pl.UTF-8):	Implementacja loadera i warstw kontroli poprawności standardu OpenXR
 Name:		OpenXR
 Version:	1.1.60
-Release:	1
+Release:	2
 License:	Apache v2.0
 Group:		Libraries
 #Source0Download: https://github.com/KhronosGroup/OpenXR-SDK-Source/releases
